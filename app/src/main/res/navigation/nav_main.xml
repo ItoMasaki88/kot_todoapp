@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.test.todoapp.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_toDoDetailFragment"
+            app:destination="@id/toDoDetailFragment2" />
+        <action
+            android:id="@+id/action_mainFragment_to_createToDoFragment"
+            app:destination="@id/createToDoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/createToDoFragment2"
+        android:name="com.test.todoapp.page.create.CreateToDoFragment"
+        android:label="CreateToDoFragment" />
+    <fragment
+        android:id="@+id/editToDoFragment"
+        android:name="com.test.todoapp.page.edit.EditToDoFragment"
+        android:label="EditToDoFragment" />
+    <fragment
+        android:id="@+id/toDoDetailFragment2"
+        android:name="com.test.todoapp.page.detail.ToDoDetailFragment"
+        android:label="ToDoDetailFragment" >
+        <action
+            android:id="@+id/action_toDoDetailFragment2_to_editToDoFragment"
+            app:destination="@id/editToDoFragment" />
+        <argument
+            android:name="todo"
+            app:argType="com.test.todoapp.model.todo.ToDo" />
+    </fragment>
+</navigation>
